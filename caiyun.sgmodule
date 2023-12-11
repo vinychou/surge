@@ -1,0 +1,27 @@
+#!name=caiyun
+#!desc=🔗 [2023/12/11 19:47:27] caiyun
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js/_end_/caiyun.sgmodule?jsc=.&type=qx-rewrite&target=surge-module&del=true&compatibilityOnly=true
+
+
+[MITM]
+
+hostname = %APPEND% *.cyapi.cn
+
+[Map Local]
+
+# 普通版广告
+^https:\/\/ad\.cyapi\.cn\/v2\/req\?app_name=weather data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[Script]
+
+# 赏叶赏花
+caiyun = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?app_name=weather, script-path=http://script.hub/convert/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js/_end_/caiyun.js?type=qx-script&target=surge-script&compatibilityOnly=true, requires-body=true, max-size=-1, timeout=60
+
+# 解锁vip
+caiyun = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/v2\/user, script-path=http://script.hub/convert/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js/_end_/caiyun.js?type=qx-script&target=surge-script&compatibilityOnly=true, requires-body=true, max-size=-1, timeout=60
+
+# 卫星云图 48小时预报
+caiyun = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(satellite|nafp\/origin_images), script-path=http://script.hub/convert/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js/_end_/caiyun.js?type=qx-script&target=surge-script&compatibilityOnly=true, timeout=60
+
