@@ -1,10 +1,5 @@
-#!name=caiyun
-#!desc=🔗 [2023/12/11 19:47:27] caiyun
-
-# 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js/_end_/caiyun.sgmodule?jsc=.&type=qx-rewrite&target=surge-module&del=true&compatibilityOnly=true
-
-
+#!name彩云天气
+#!desc=彩云天气VIP
 [MITM]
 
 hostname = %APPEND% *.cyapi.cn
